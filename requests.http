@@ -1,0 +1,83 @@
+@contentType = application/json
+
+@pavelBearer = Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkzOTgyNDA4LCJqdGkiOiJhNjRiM2FkYjAwYmI0MDJkYWI5NTEyYjlkYTkxNzY1OSIsInVzZXJfaWQiOjF9.BUa4lBL68Q5mJbF-Qn-HcKc6aIUl4huSlj8iDyTrOk8
+
+@adminBearer = Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk0MDcyMTUxLCJqdGkiOiIxOGY0MzY5Y2RlYjQ0ZGE0YTVlOGJiMGY2ZTEyYzE5MSIsInVzZXJfaWQiOjR9.ZHEuaFHxsM3ya078XFqMMg0SzK-vtBfaINu7Ny_5N_M
+
+
+### anonim get /posts/
+GET http://127.0.0.1:8000/api/v1/posts/
+
+
+### pavel get /posts/
+GET http://127.0.0.1:8000/api/v1/posts/
+Authorization: {{pavelBearer}}
+
+
+### admin get /posts/
+GET http://127.0.0.1:8000/api/v1/posts/
+Authorization: {{adminBearer}}
+
+
+### pavel post /posts/
+POST http://127.0.0.1:8000/api/v1/posts/
+Authorization: {{pavelBearer}}
+Content-Type: {{contentType}}
+
+{
+    "text": "text text text"
+}
+
+
+### anonim get /follow/
+GET http://127.0.0.1:8000/api/v1/follow/
+
+
+### pavel get /follow/
+GET http://127.0.0.1:8000/api/v1/follow/
+Authorization: {{pavelBearer}}
+
+
+### pavel get /follow/?search=...
+GET http://127.0.0.1:8000/api/v1/follow/?search=1
+Authorization: {{pavelBearer}}
+
+
+### pavel post /follow/
+POST http://127.0.0.1:8000/api/v1/follow/
+Authorization: {{pavelBearer}}
+Content-Type: {{contentType}}
+
+{
+    "following": "pavel"
+}
+
+
+### admin post /follow/
+POST http://127.0.0.1:8000/api/v1/follow/
+Authorization: {{adminBearer}}
+Content-Type: {{contentType}}
+
+{
+    "following": "pavel"
+}
+
+
+### create user
+POST http://127.0.0.1:8000/api/v1/users/
+Content-Type: {{contentType}}
+
+{
+    "username": "pavel",
+    "password": "qwerty555"
+}
+
+
+### get token for user
+POST http://127.0.0.1:8000/api/v1/jwt/create/
+Content-Type: {{contentType}}
+
+{
+    "username": "admin",
+    "password": "qwerty555"
+}

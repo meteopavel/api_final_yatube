@@ -13,6 +13,5 @@ v1_router.register('posts', PostViewSet, basename='posts')
 
 urlpatterns = [
     path('v1/', include(v1_router.urls)),
-    path('v1/', include('djoser.urls')),
     path('v1/', include('djoser.urls.jwt')),
 ]

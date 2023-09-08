@@ -70,9 +70,9 @@ POST /api/v1/follow/
 }
 ```
 # Основные используемые инструменты
-*Python 3.9.10
-*Django 3.2.16
-*djangorestframework 3.12.4
-*pytest 6.2.4
-*PyJWT 2.1.0
-*requests 2.26.0
+* Python 3.9.10
+* Django 3.2.16
+* djangorestframework 3.12.4
+* pytest 6.2.4
+* PyJWT 2.1.0
+* requests 2.26.0

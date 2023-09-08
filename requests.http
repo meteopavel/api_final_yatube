@@ -2,8 +2,7 @@
 
 @pavelBearer = Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkzOTgyNDA4LCJqdGkiOiJhNjRiM2FkYjAwYmI0MDJkYWI5NTEyYjlkYTkxNzY1OSIsInVzZXJfaWQiOjF9.BUa4lBL68Q5mJbF-Qn-HcKc6aIUl4huSlj8iDyTrOk8
 
-@adminBearer = Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk0MDcyMTUxLCJqdGkiOiIxOGY0MzY5Y2RlYjQ0ZGE0YTVlOGJiMGY2ZTEyYzE5MSIsInVzZXJfaWQiOjR9.ZHEuaFHxsM3ya078XFqMMg0SzK-vtBfaINu7Ny_5N_M
-
+@adminBearer = Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk0MTY4MzM3LCJqdGkiOiI1YWRlNzk5MzQzNGY0YmUyODY3NjQ3ZjM1YzExZjU0OSIsInVzZXJfaWQiOjR9.ioRXM9LLn0huVqzYVGg4QdizBtnm0Lh0YiFi_aWlI2U
 
 ### anonim get /posts/
 GET http://127.0.0.1:8000/api/v1/posts/
@@ -15,7 +14,7 @@ Authorization: {{pavelBearer}}
 
 
 ### admin get /posts/
-GET http://127.0.0.1:8000/api/v1/posts/
+GET http://127.0.0.1:8000/api/v1/posts/?limit=1
 Authorization: {{adminBearer}}
 
 

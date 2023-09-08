@@ -7,7 +7,7 @@ from posts.models import Comment, Follow, Group, Post, User
 
 
 class CommentSerializer(serializers.ModelSerializer):
-    author = serializers.SlugRelatedField(
+    author = SlugRelatedField(
         slug_field='username',
         read_only=True
     )
@@ -19,12 +19,12 @@ class CommentSerializer(serializers.ModelSerializer):
 
 
 class FollowSerializer(serializers.ModelSerializer):
-    user = serializers.SlugRelatedField(
+    user = SlugRelatedField(
         slug_field='username',
         read_only=True,
         default=serializers.CurrentUserDefault()
     )
-    following = serializers.SlugRelatedField(
+    following = SlugRelatedField(
         slug_field='username',
         queryset=User.objects.all(),
     )
@@ -41,11 +41,11 @@ class FollowSerializer(serializers.ModelSerializer):
             )
         ]
 
-    def validate_following(self, user):
-        if user == self.context.get('request').user:
+    def validate_following(self, value):
+        if value == self.context.get('request').user:
             raise serializers.ValidationError(
                 'Нельзя подписаться на самого себя!')
-        return user
+        return value
 
 
 class GroupSerializer(serializers.ModelSerializer):

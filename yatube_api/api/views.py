@@ -21,8 +21,7 @@ class CommentViewSet(viewsets.ModelViewSet):
         )
 
     def get_queryset(self):
-        new_queryset = self.get_post().comments
-        return new_queryset
+        return self.get_post().comments
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user, post=self.get_post())

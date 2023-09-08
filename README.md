@@ -12,7 +12,8 @@ cd yatube_api
 Cоздать и активировать виртуальное окружение:
 ```
 python3 -m venv venv
-source env/bin/activate
+linux: source env/bin/activate
+windows: source venv/Scripts/activate
 ```
 Установить зависимости из файла requirements.txt:
 ```
@@ -68,3 +69,11 @@ POST /api/v1/follow/
     "following": "string"
 }
 ```
+# Основные используемые инструменты
+Python 3.9.10
+
+Django 3.2.16
+djangorestframework 3.12.4
+pytest 6.2.4
+PyJWT 2.1.0
+requests 2.26.0
